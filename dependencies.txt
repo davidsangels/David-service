@@ -1,0 +1,15 @@
+nodemon
+mysql
+sequalize
+jest
+super tester
+webpack
+eslint
+
+react
+reactDom
+
+express
+bodyparser
+
+babel loaders for webPack?
