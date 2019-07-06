@@ -2,4 +2,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<p>ptage</p>,document.getElementByID('app'))
+ReactDOM.render(<p>ptage</p>,document.getElementById('app'))

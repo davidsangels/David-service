@@ -9,12 +9,13 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "server": "live-server ./public/index.html -w",
+    "server": "live-server ./public -w",
     "start": "nodemon /public/index.html"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "jest": "^24.8.0",
     "live-server": "^1.2.1",
     "mysql": "^2.17.1",
