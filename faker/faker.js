@@ -1,4 +1,4 @@
 var faker = require('faker');
 
-var randomDescription = faker.name.findName();
-module.exports.randomDescription = randomDescription
+var randomDescription = faker.lorem.sentences()
+exports.randomDescription = randomDescription
