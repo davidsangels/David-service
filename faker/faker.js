@@ -1,4 +1,4 @@
-var faker = require('faker');
+const faker = require('faker');
 
-var randomDescription = faker.lorem.sentences()
-exports.randomDescription = randomDescription
+const randomDescription = faker.lorem.sentences();
+exports.randomDescription = randomDescription;

@@ -1,33 +1,27 @@
-var mysql      = require('mysql');
+const mysql = require('mysql');
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  database : 'listings'
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'listings',
 });
 
 connection.connect();
 
 // create function that adds
-// small img large img med img img url img description after ///s3 api
-
-
-
-
-
+// small img large img med img img url img description after
 const createId = () => {
-
-  for (var i = 1 ; i < 101 ; i ++){
+  for (let i = 1; i < 101; i + 1) {
     // do aquery
-    let string = String(i)
-    let query = `insert into galleries (url) values (/page/${string})`
+    const string = String(i);
+    const query = `insert into galleries (url) values (/page/${string})`;
 
-   connection.query(query,(err,result)=>{
-     if (err){
-       throw err
-     }
-    console.log(result)
-   })
+    connection.query(query, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      console.log(result);
+    });
   }
-}
-exports.createId = createId
+};
+exports.createId = createId;

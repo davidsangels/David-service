@@ -1,10 +1,18 @@
-/**
- * These rules enforce the Hack Reactor Style Guide
- *
- * Visit this repo for more information:
- *   https://github.com/reactorcore/eslint-config-hackreactor
- */
 
 module.exports = {
-  extends: './node_modules/eslint-config-hackreactor/index.js'
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+},
+  extends: 'airbnb',
+  rules: {
+    "no-console": "off"
+  }
 };
