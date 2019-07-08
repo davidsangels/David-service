@@ -1,12 +1,13 @@
 const aws = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
+const Key = require('../awspasskey.js');
 
 //  sets config credentials?
 
 aws.config.update({
-  secretAccessKey: 'wnzaImdh0IH2QDfjpqAg1NqgqliaOSboxs/0o7MB',
-  accessKeyId: 'AKIAJXZDJHAQ7RJU7OTA',
+  secretAccessKey: Key.accessKey,
+  accessKeyId: Key.secretKey,
   region: 'us-west-1',
 });
 // const config= aws.config.loadFromPath('./config.json');
