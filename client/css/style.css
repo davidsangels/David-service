@@ -1,0 +1,19 @@
+* {
+  box-sizing: border box
+}
+body{
+ margin: 0
+}
+/* make max size of main set to a rectangle*/
+main {
+display: grid;
+grid-template-columns: repeat(auto-fit
+             minmax (200px, 1fr))
+}
+/* add a  main image this image will */
+img {
+ display: block;
+ width:
+}
+
+/* add button css for share save and view photots*/

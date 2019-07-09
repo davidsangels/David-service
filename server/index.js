@@ -6,12 +6,9 @@ const bodyParser = require('body-parser');
 const seed = require('../database/connection.js');
 
 const port = 3000;
-const listing = require('../database/index.js');
-
-
 const router = require('../routes/image-upload.js');
 
-const upload = require('../api/s3.js');
+
 const request = require('request');
 const connection = require('../database/connection.js')
 

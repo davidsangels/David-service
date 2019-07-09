@@ -16,7 +16,6 @@ class App extends React.Component {
     <div>
       <main>
       <p>ggg</p>
-
       </main>
 
     </div>
