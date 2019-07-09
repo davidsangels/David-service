@@ -10,7 +10,9 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server": "live-server ./public -w",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "test": "jest --watch "
+
   },
   "dependencies": {
     "aws-sdk": "^2.488.0",
