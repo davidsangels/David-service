@@ -3,16 +3,17 @@ const express = require('express');
 
 const server = express();
 const bodyParser = require('body-parser');
+const seed = require('../database/connection.js');
 
 const port = 3000;
-const listing = require('../database/index.js')
-
-const faker = require('../faker/faker.js')
+const listing = require('../database/index.js');
 
 
 const router = require('../routes/image-upload.js');
-const upload  = require('../api/s3.js');
+
+const upload = require('../api/s3.js');
 const request = require('request');
+const connection = require('../database/connection.js')
 
 server.use(bodyParser());
 server.use('/api', router);
@@ -20,20 +21,13 @@ server.use(express.static('public'));
 server.listen(port, () => console.log(`server listening on port : ${port}`));
 
 server.get('/data', (req, res) => {
-// console.log(faker.randomDescription)
-  console.log('inside get endpoint');
-  // pexel
-  // createId.createId()
-  // listing.findAll()
-  //   .complete( (err,success) => {
-  //     if(err){
-  //       console.log('error')
-  //     }else {
-  //       console.log('success')
-  //     }
-  // })
-  // res.send('data')
-  res.send('hey');
+  connection.connection.query('select * from images', (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+      res.send(result);
+    }
+  });
 });
 const api = 'https://api.unsplash.com/search/photos?per_page=15?page=1&query=office&client_id=7a867606bd956074fa8fb943a9d2f0f5028832bcc0a42ccbde1265c06a87fedb'
 
@@ -68,4 +62,8 @@ server.get('/addImage', () => {
       // chen
     }
   });
+});
+server.get('/seedtest', (req, res) => {
+  seed.createImgData();
+  res.send('complete');
 });
