@@ -17,8 +17,8 @@ server.use('/api', router);
 server.use(express.static('public'));
 server.listen(port, () => console.log(`server listening on port : ${port}`));
 
-server.get('/data', (req, res) => {
-  connection.connection.query('select * from images', (err, result) => {
+server.post('/data', (req, res) => {
+  connection.connection.query('select * from images where id = ?', req.body.id, (err, result) => {
     if (err) {
       throw err;
     } else {
