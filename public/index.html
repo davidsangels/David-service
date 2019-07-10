@@ -6,25 +6,72 @@
 
   <body>
     <div id ='app'></div>
-  <style>
+    <style>
+
+
+
+
   .container {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 2fr 1fr;
     grid-gap: 10px;
     height: 353.59px;
-    width: 1104px;
+    max-width: 2150px;
+    margin: auto;
     border: solid 2px black;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
   }
-
+.secondaryImages{
+  display: grid;
+  grid-template-rows: 1f 1f;
+  grid-gap:  4px;
+  height: 353.59px;
+}
   .img {
     max-width: 100%;
-    height: auto
+    border: solid 1px black;
  }
  .mainImg {
     max-width: 100%;
-    height: auto
+    border: solid 1px black;
  }
+ @media (max-width:  710px) {
+      .secondaryImages {
+        display: none
+      }
+
+      .container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns:  1fr;
+        grid-gap: 10px;
+        height: 353.59px;
+        max-width: 2150px;
+        margin: auto;
+        border: solid 2px black;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+      }
+    }
+        .thumbNails {
+          display: grid;
+          grid-template-columns: 1fr 1fr  1fr  1fr 1fr 1fr 1fr 1fr;
+          grid-gap: 1px;
+          height: 80px ;
+          max-width: 2150px;
+          margin: auto;
+          border: solid 2px black;
+          margin: 0 auto;
+          overflow: hidden;
+          position: relative;
+        }
+        .thumb {
+          border: solid 10px black;
+        }
   </style>
   <script type="text/javascript" src="bundle.js"></script>
   </body>
