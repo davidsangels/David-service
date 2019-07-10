@@ -11,9 +11,11 @@ class App extends React.Component {
     frontImages: [],
     mainImg: [],
     page: 1,
-    view: false
+    view: false,
+    currentview: '',
     }
     this.switchToCarousel =this.switchToCarousel.bind(this);
+    this.changeCurrentView = this.changeCurrentView.bind(this)
   }
   // component mount does ajax request
   componentDidMount() {
@@ -38,7 +40,9 @@ class App extends React.Component {
       currentView: url,
       view: true,
     })
-
+  }
+  changeCurrentView(url){
+    this.setState({currentView:url})
   }
 
   render() {
@@ -47,16 +51,22 @@ class App extends React.Component {
       if (this.state.view === false) {
         return (
           <div className='container'>
+
           {this.state.mainImg.map(img=>(<img onClick={() => this.switchToCarousel(img.imgUrl)} className='mainImg' src={img.imgUrl} />))}
 
-           <div className='secondaryImages'>
-             {this.state.frontImages.map(img=>(<img onClick={() => this.switchToCarousel(img.imgUrl)} className='img' src={img.imgUrl} />))}
+           <div className='secondaryImagesview '>
+             {this.state.frontImages.map(img=>(
+            <div className="secondaryImage">
+              <img onClick={() => this.switchToCarousel(img.imgUrl)} className='img' src={img.imgUrl} />
+            </div>
+
+             ))}
            </div>
          </div>
         )
       }else {
         return (
-          <Carousel currentView={this.state.currentView} images={this.state.data} />
+          <Carousel  changeView={this.changeCurrentView}currentView={this.state.currentView} images={this.state.data} />
         )
       }
     }

@@ -1,0 +1,153 @@
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 4px;
+  height: 353.59px;
+  max-width: 2150px;
+  margin: auto;
+  border: solid 2px black;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.secondaryImagesview {
+  display: grid;
+  grid-template-rows: 1f 1f;
+  grid-gap:  4px;
+  height: 353.59px;
+}
+.secondaryImage{
+  max-width: 100%;
+  overflow: hidden;
+}
+.img {
+  max-width: 200px;
+
+ }
+ .mainImg {
+    max-width: 100%;
+    border: solid 1px black;
+ }
+ /*   screen shrink transition                    */
+
+ /* screen shrink transition  carousel */
+ /*@media (min-max: 710px){
+  .fullView {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    border: solid 1px black;
+  }
+  .mainView {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    border: solid 1px black;
+  }
+  .currentView {
+    border-radius: 25px;
+    width: 100%;
+    position: relative;
+  }
+
+  .thumbNails {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr  1fr  1fr 1fr 1fr ;
+    grid-gap: 1px;
+    height: 50px ;
+    max-width: 105vh !important;
+    margin: auto;
+    border: solid 2px black;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+
+  }
+  .thumb {
+    width: 48px !important;
+    height: 48px !important;
+    overflow: hidden !important;
+    border-radius: 4px !important;
+  }
+
+  .bottom {
+
+  }
+}*/
+
+ /* screen shrink transition front view */
+@media (max-width:  710px) {
+  .secondaryImages {
+    display: none
+  }
+  .container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns:  1fr;
+    grid-gap: 10px;
+    height: 353.59px;
+    max-width: 2150px;
+    margin: auto;
+    border: solid 2px black;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+
+
+
+
+
+
+
+/* full screen carousel */
+.fullView {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr;
+  border: solid 1px black;
+}
+.mainView {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  border: solid 1px black;
+}
+
+.currentView {
+  width: 100%;
+  border-radius: 6px;
+}
+
+
+/* carosel */
+.thumbNails {
+  width:70%;
+  overflow: hidden;
+}
+.preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+}
+.thumb {
+  margin: 5px;
+  width: 50px;
+  border-radius: 6px;
+}
+
+
+/*  c*/
+
+.current {
+  border:solid 5px red;
+}

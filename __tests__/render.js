@@ -6,7 +6,8 @@ import App from '../components/App.jsx';
 describe('First React component test with Enzyme', () => {
    it('renders without crashing', () => {
 
-    shallow(<App />)    );
+    const wrapper = shallow(<App />)    );
+    expects()
 });
 
 describe('App mount', () => {
@@ -14,3 +15,7 @@ describe('App mount', () => {
 
     mount(<App />);    });
 });
+
+const wrapper = shallow(<App/> )
+wrapper.istance(somemethod)
+expect(wrapper.state().value).to.eaqual(1)
