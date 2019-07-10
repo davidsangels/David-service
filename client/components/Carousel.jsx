@@ -9,13 +9,16 @@ class Carousel extends React.Component {
     this.state = {
       images: this.props.images,
       currentView: this.props.currentView,
+
     }
   }
+
 
   render() {
     return (<div>
       <div className='currentView'>
       <img src= {this.state.currentView} />
+      <span className='exit'>x</span>
       </div>
     <div className="thumbNails">
       {this.state.images.map( (img) =>(
