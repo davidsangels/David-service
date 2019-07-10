@@ -7,7 +7,7 @@ class Carousel extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      images: this.props.images,
+
       currentView: this.props.currentView,
 
     }
@@ -21,7 +21,7 @@ class Carousel extends React.Component {
       <span className='exit'>x</span>
       </div>
     <div className="thumbNails">
-      {this.state.images.map( (img) =>(
+      {this.props.images.map( (img) =>(
       <img className='thumbs' src={img.imgUrl}  width="100px" />))}
     </div>
 
