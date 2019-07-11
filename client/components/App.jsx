@@ -13,6 +13,7 @@ class App extends React.Component {
     page: 1,
     view: false,
     currentview: '',
+    test: 1,
     }
     this.switchToCarousel =this.switchToCarousel.bind(this);
     this.changeCurrentView = this.changeCurrentView.bind(this)
