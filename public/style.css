@@ -17,9 +17,13 @@ grid-template-rows: 1f 1f;
 grid-gap:  4px;
 height: 353.59px;
 }
+.secondary{
+  border: 2px solid  black;
+}
 .img {
   max-width: 100%;
-  border: solid 1px black;
+
+
 }
 .img-hover-zoom{
   height: 500px;
@@ -29,20 +33,36 @@ height: 353.59px;
   transition: transform .5s ease;
 }
 
-
 .img-hover-zoom:hover img {
   transform: scale(1.5);
 }
-.mainImg {
-  max-width: 100%;
-  max-height:100%;
-  transition: 0.75s;
+.mainContainer{
+  border: 2px solid black;
+  overflow: hidden;
+  height: 100%;
 }
-@media (max-width:  710px) {
+.mainImg {
+  height: 140%;
+
+object-fit: contain;
+transform: scale(1) !important;
+
+}
+@media (max-width:  741px) {
   .secondaryImages {
     display: none;
   }
+  .mainContainer{
+    border: 2px solid red;
+    overflow: hidden;
+    height: 353.59px;;
+  }
+
 }
+
+
+
+
 
 /* ------------main gallery --------------------------- */
 .wholeView{
@@ -76,22 +96,22 @@ height: 353.59px;
 
 .thumbNails {
   display: grid;
-  grid-template-columns: 1fr 1fr  1fr  1fr 1fr 1fr ;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr  1fr  ;
+  grid-auto-flow: column;
+  grid-gap: 5px;
   height: 80px ;
-  max-width: 1000px;
+  width: 400px;
   margin: 5px;
   margin: 0 auto;
   overflow: hidden;
-  position: absolute;
-  left: 25%;
-  right: 25%
+  position: relative;
+  border: 3px solid black;
 }
-
-
 .frame {
   width: 60px;
   height: 60px;
   overflow: hidden;
   border-radius: 5px;
+  position: relative;
+
 }

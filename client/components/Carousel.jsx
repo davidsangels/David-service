@@ -21,7 +21,7 @@ class Carousel extends React.Component {
       <div className='currentView'>
         <p>X</p>
         <img className="View" src= {this.state.currentView} />
-        <span className='exit'>X</span>
+        <p className='exit'>X</p>
       </div>
 `
         <div className="thumbNails">
