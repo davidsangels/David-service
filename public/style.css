@@ -1,0 +1,97 @@
+.container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+  height: 353.59px;
+  max-width: 2150px;
+  margin: auto;
+  border: solid 2px black;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.secondaryImages{
+display: grid;
+grid-template-rows: 1f 1f;
+grid-gap:  4px;
+height: 353.59px;
+}
+.img {
+  max-width: 100%;
+  border: solid 1px black;
+}
+.img-hover-zoom{
+  height: 500px;
+  overflow: hidden;
+}
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
+}
+.mainImg {
+  max-width: 100%;
+  max-height:100%;
+  transition: 0.75s;
+}
+@media (max-width:  710px) {
+  .secondaryImages {
+    display: none;
+  }
+}
+
+/* ------------main gallery --------------------------- */
+.wholeView{
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+  height:570px;
+}
+.currentView {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin-top: 20px;
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+}
+.View{
+  max-width: 85%;
+  max-height: 55vh;
+  border-radius: 16px;
+  position: absolute;
+  margin: 0px auto;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.exit{
+  font-size: 25px;
+}
+/*-------thumb-------------*/
+
+.thumbNails {
+  display: grid;
+  grid-template-columns: 1fr 1fr  1fr  1fr 1fr 1fr ;
+  grid-template-rows: 1fr;
+  height: 80px ;
+  max-width: 1000px;
+  margin: 5px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  left: 25%;
+  right: 25%
+}
+
+
+.frame {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 5px;
+}

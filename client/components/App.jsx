@@ -47,7 +47,13 @@ class App extends React.Component {
       if (this.state.view === false) {
         return (
           <div className='container'>
-          {this.state.mainImg.map(img=>(<img onClick={() => this.switchToCarousel(img.imgUrl)} className='mainImg' src={img.imgUrl} />))}
+          {this.state.mainImg.map(img=>(
+          <div className='zoom'>
+
+            <img onClick={() => this.switchToCarousel(img.imgUrl)} className='mainImg' src={img.imgUrl} />
+          </div>
+
+          ))}
 
            <div className='secondaryImages'>
              {this.state.frontImages.map(img=>(<img onClick={() => this.switchToCarousel(img.imgUrl)} className='img' src={img.imgUrl} />))}

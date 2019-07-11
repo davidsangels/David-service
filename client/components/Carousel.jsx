@@ -15,15 +15,24 @@ class Carousel extends React.Component {
 
 
   render() {
-    return (<div>
+    return (
+    <div className="wholeView">
+
       <div className='currentView'>
-      <img src= {this.state.currentView} />
-      <span className='exit'>x</span>
+        <p>X</p>
+        <img className="View" src= {this.state.currentView} />
+        <span className='exit'>X</span>
       </div>
-    <div className="thumbNails">
-      {this.props.images.map( (img) =>(
-      <img className='thumbs' src={img.imgUrl}  width="100px" />))}
-    </div>
+`
+        <div className="thumbNails">
+           {this.props.images.map( (img) =>(
+            <div className='frame'>
+              <img className='thumbs' src={img.imgUrl}  width="100px" />
+            </div>))}
+
+
+
+      </div>
 
     </div>
     )
