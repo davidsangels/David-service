@@ -11,9 +11,12 @@ class App extends React.Component {
     frontImages: [],
     mainImg: [],
     page: 1,
-    view: false
+    view: false,
+    index: 3,
     }
     this.switchToCarousel =this.switchToCarousel.bind(this);
+    this.changeView= this.changeView.bind(this);
+    this.buttonChangeView =this.buttonChangeView.bind(this);
   }
   // component mount does ajax request
   componentDidMount() {
@@ -39,6 +42,24 @@ class App extends React.Component {
       view: true,
     })
 
+  }
+  changeView(url){
+    console.log(this.state.currentView)
+    this.setState({
+      currentView: url,
+    })
+  }
+  buttonChangeView(num){
+    console.log(this.state.currentView)
+    for (var i = 0; i < this.state.data; i++  ){
+      if (this.state.data.imgUrl === this.state.currentView){
+        console.log('yes')
+       let view =[...this.state.data];
+        this.setState({
+          currentView: view[i+num].imgUrl
+        })
+      }
+    }
   }
 
   render() {
@@ -67,7 +88,13 @@ class App extends React.Component {
         )
       }else {
         return (
-          <Carousel currentView={this.state.currentView} images={this.state.data} />
+          <div>
+            <Carousel
+              buttonChangeView={this.buttonChangeView}
+              changeView={this.changeView}
+              currentView={this.state.currentView}
+              images={this.state.data} />
+          </div>
         )
       }
     }
