@@ -37,10 +37,26 @@ const createImgData = () => {
     ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1547110287-71448271b1de.jpeg'],
     ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1551133989-6a6512ad3915.jpeg'],
     ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1560976813-060185623241.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1484301548518-d0e0a5db0fc8.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1505992525839-8040ffa856ed.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1519397652863-aad621636ac7.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1524061662617-6a29d732e3ef.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1526308182272-d2fe5e5947d8.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1547110287-71448271b1de.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1551133989-6a6512ad3915.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1560976813-060185623241.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1484301548518-d0e0a5db0fc8.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1505992525839-8040ffa856ed.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1519397652863-aad621636ac7.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1524061662617-6a29d732e3ef.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1526308182272-d2fe5e5947d8.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1547110287-71448271b1de.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1551133989-6a6512ad3915.jpeg'],
+    ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1560976813-060185623241.jpeg'],
   ];
 
-  const min = 3;
-  const max = 11; console.log(faker.lorem.sentence())
+  const min = 10;
+  const max = 20;
   for (let i = 1; i < 101; i += 1) {
     // math random function
 
