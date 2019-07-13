@@ -51,7 +51,7 @@ class Gallery extends React.Component {
       <div className='row'>
         <div className='leftParent'>
           <div onClick={() => this.props.changeIndex(-1)} className='left'>
-            <Left />
+            <Left/>
           </div>
         </div>
 
