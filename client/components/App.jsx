@@ -13,11 +13,12 @@ class App extends React.Component {
       mainImg: [{imgUrl: 0}],
       page: 1,
       view: false,
-      currentIndex: '',
+      currentIndex: 0,
       offset: 1,
     }
     this.changeIndex = this.changeIndex.bind(this);
     this.changeView = this.changeView.bind(this);
+    this.exitGallery = this.exitGallery.bind(this);
   }
 
   componentDidMount() {
@@ -59,6 +60,12 @@ class App extends React.Component {
       offset: off,
     });
   }
+  exitGallery(){
+    this.setState({
+      view: false
+    })
+
+  }
   changeIndex(num) {
   if (this.state.currentIndex > 0 & this.state.currentIndex < this.state.data.length){
     const imgUrl = this.state.data[this.state.currentIndex + num].imgUrl
@@ -99,11 +106,12 @@ class App extends React.Component {
       }else {
         return (
             <Gallery
+              exitGallery={this.exitGallery}
               changeIndex={this.changeIndex}
               offset = {this.state.offset}
               images={this.state.data}
               currentView={this.state.currentView}
-              currentIndex={this.state.index}
+              currentIndex={this.state.currentIndex}
               changeView={this.changeView}
             />
         )
