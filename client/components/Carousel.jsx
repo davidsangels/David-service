@@ -1,32 +1,29 @@
-import React from 'react';
-// hase a  x button on click changes modal click to false
-// has left right arrows
-// has main image
-// has caro
+
+import React from 'react'
+
+
+
 class Carousel extends React.Component {
-  constructor (props) {
+
+  constructor (props){
     super(props)
-    this.state = {
-      images: this.props.images,
-      currentView: this.props.currentView,
+    this.state ={
+      currentIndex: 0,
 
     }
   }
-
-
   render() {
-    return (<div>
-      <div className='currentView'>
-      <img src= {this.state.currentView} />
-      <span className='exit'>x</span>
+  return(
+      <div className='carousel-container' >
+        <div className='image-wrapper' style={{transform: `translateX(-${this.props.offset}px)`}}  >
+          {this.props.images.map((img, index) => (
+              <img className='image' onClick={()=> this.props.changeView(img.imgUrl)}
+              src={img.imgUrl}
+              key={index} />
+          ))}
+        </div>
       </div>
-    <div className="thumbNails">
-      {this.state.images.map( (img) =>(
-      <img className='thumbs' src={img.imgUrl}  width="100px" />))}
-    </div>
-
-    </div>
-    )
-  }
+      )
+    }
 }
-export default Carousel;
+export default Carousel

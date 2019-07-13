@@ -1,0 +1,13 @@
+.uberDiv {
+  width: 100%;
+}
+.container {
+  color: blue;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20%;
+}
+
+.columns {
+  border: 1px solid green;
+}
