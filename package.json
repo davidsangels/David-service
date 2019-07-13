@@ -1,4 +1,12 @@
 {
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>./src/setupTests.js"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
   "name": "",
   "version": "",
   "description": "",
@@ -12,10 +20,11 @@
     "server": "live-server ./public -w",
     "start": "nodemon server/index.js",
     "seed": "node ./database/connection.js",
-    "test": "jest  --collectCoverage "
+    "test": "jest  --coverage --watch "
   },
   "dependencies": {
     "aws-sdk": "^2.488.0",
+    "babel-jest": "^24.8.0",
     "body-parser": "^1.19.0",
     "es6-promise": "^4.2.8",
     "express": "^4.17.1",

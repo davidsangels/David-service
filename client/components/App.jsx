@@ -2,24 +2,24 @@
 import React from 'react';
 import $ from  'jquery';
 import Gallery from './Gallery.jsx';
-
+/// i change the main img state
 class App extends React.Component {
   constructor (props){
     super(props)
     this.state = {
       currentView: '',
       data: [],
-    frontImages: [],
-    mainImg: [],
-    page: 1,
-    view: false,
-    currentIndex: '',
-    offset: 1,
+      frontImages: [{imgUrl: '1'},'2'],
+      mainImg: [{imgUrl: 0}],
+      page: 1,
+      view: false,
+      currentIndex: '',
+      offset: 1,
     }
     this.changeIndex = this.changeIndex.bind(this);
     this.changeView = this.changeView.bind(this);
   }
-  // component mount does ajax request
+
   componentDidMount() {
   $.ajax({
     method: 'POST',
@@ -35,7 +35,6 @@ class App extends React.Component {
     }
   })
   }
-
   changeView(url){
     var margin = 3;
     var halfWidth = 24;
@@ -51,10 +50,8 @@ class App extends React.Component {
       off = halfWidth + margin;
       }else{
         off = ((index - 1) * halfWidth) + (halfWidth + margin);
-
       }
     }
-
     this.setState({
       currentView: url,
       view: true,
@@ -78,25 +75,24 @@ class App extends React.Component {
        currentView: imgUrl,
     })
   }
-
   }
   render() {
     let views = () => {
       if (this.state.view === false) {
         return (
           <div className='container'>
-            {this.state.mainImg.map(img=>(
               <div className='mainContainer'>
-                <img onClick={() => this.changeView(img.imgUrl)} className='mainImg'
-                src={img.imgUrl} />
+                <img onClick={() => this.changeView(this.state.mainImg[0].imgUrl)} className='mainImg'
+                src={this.state.mainImg[0].imgUrl}/>
               </div>
-            ))}
            <div className='secondaryImages'>
-             {this.state.frontImages.map(img=>(
               <div className='secondary' >
-                <img onClick={() => this.changeView(img.imgUrl)} className='img' src={img.imgUrl} />
+                <img
+                onClick={() => this.changeView(this.state.frontImages[0].imgUrl)}
+                className='img' src={this.state.frontImages[0].imgUrl} />
+                <img onClick={() => this.changeView(this.state.frontImages[1].imgUrl)}
+                className='img2' src={this.state.frontImages[1].imgUrl} />
               </div>
-             ))}
            </div>
          </div>
         )
@@ -110,11 +106,11 @@ class App extends React.Component {
               currentIndex={this.state.index}
               changeView={this.changeView}
             />
-        )g
+        )
       }
     }
     return (
-    <div>
+    <div className='super'>
       {views()}
     </div>
     )
