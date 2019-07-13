@@ -11,6 +11,7 @@
     "react-dev": "webpack -d --watch",
     "server": "live-server ./public -w",
     "start": "nodemon server/index.js",
+    "seed": "node ./database/connection.js",
     "test": "jest --watch "
   },
   "dependencies": {
