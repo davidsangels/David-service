@@ -138,14 +138,8 @@
   transition: all 0.3s ease-in-out;
 
 }
-.frame{
-  border-radius: 4px;
-  overflow: hidden;
-  height:48px;
-  width: 48px;
-  margin: 5px;
 
-}
+
 .image{
   border-radius: 4px;
   width: 48px;
