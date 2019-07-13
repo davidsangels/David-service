@@ -61,32 +61,24 @@ class App extends React.Component {
       currentIndex: index,
       offset: off,
     });
-    console.log(this.state.offset)
   }
   changeIndex(num) {
-  // change currentview based on current index
-  console.log('change index')
   if (this.state.currentIndex > 0 & this.state.currentIndex < this.state.data.length){
     const imgUrl = this.state.data[this.state.currentIndex + num].imgUrl
-    const newIndex = this.state.currentIndex + num
-    console.log('imgage url ',imgUrl)
-    this.setState({
-       currentIndex: newIndex,
+    const newIndexest = this.state.currentIndex + num
+        this.setState({
+       currentIndex: newIndexest,
        currentView: imgUrl,
     })
   }else if (this.state.currentIndex === 0 && num === 1 ) {
     const imgUrl = this.state.data[this.state.currentIndex + num].imgUrl
-    const newIndex = this.state.currentIndex + num
-    console.log('imgage url ',imgUrl)
+    const newIndexest = this.state.currentIndex + num
     this.setState({
-       currentIndex: newIndex,
+       currentIndex: newIndexest,
        currentView: imgUrl,
     })
   }
-  this.setState({
-    currentIndex: newIndex,
-    currentView: imgUrl,
- })
+
   }
   render() {
     let views = () => {
@@ -110,7 +102,6 @@ class App extends React.Component {
         )
       }else {
         return (
-
             <Gallery
               changeIndex={this.changeIndex}
               offset = {this.state.offset}
@@ -119,8 +110,7 @@ class App extends React.Component {
               currentIndex={this.state.index}
               changeView={this.changeView}
             />
-
-        )
+        )g
       }
     }
     return (
