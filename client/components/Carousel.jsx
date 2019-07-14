@@ -1,6 +1,25 @@
 
 import React from 'react'
 
+const calculateOffset = (index,finalIndex) => {
+  console.log(index);
+  let extraOffset;
+  let offset;
+
+  const atFarRight = index > finalIndex - 7;
+  const atFarLeft = index < 6;
+  if (atFarRight) {
+    extraOffset = 7* (48 + 3);
+    offset = (finalIndex - 2) * (48 + 3) - extraOffset;
+  } else if (atFarLeft) {
+    offset = 0;
+  } else {
+    extraOffset = 6 * (48 + 3);
+    offset = index * (48 + 3) - extraOffset;
+  }
+
+  return offset;
+};
 class Carousel extends React.Component {
   constructor (props){
     super(props)
@@ -9,22 +28,21 @@ class Carousel extends React.Component {
     }
   }
   render() {
-    const {currentIndex, images } = this.props
+
+    const offset = calculateOffset(this.props.currentIndex,this.props.images.length - 1);
   return(
     <div className='carousel'>
       <div className='carousel-container' >
-        <div className='image-wrapper' style={{transform: `translateX(-${this.props.offset}px)`}}  >
+        <div className='image-wrapper' style={{transform: `translateX(-${offset}px)`}}  >
           {this.props.images.map( (img, index) => (
           <div >
-            <img className='image' onClick={()=> this.props.changeView(img.imgUrl)}
+            <img className='image' onClick={ ()=> this.props.setIndex(index)}
             src={img.imgUrl}
-            key={index} />
+            key={index} style={this.props.currentIndex === index ? {border: '3px solid black'}: null} />
           </div>
           ))}
         </div>
       </div>
-
-
     </div>
       )
     }

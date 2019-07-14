@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from './Carousel.jsx'
-import $ from 'jquery';
+
 
 const pstyle = {
   height: "24px",
@@ -22,8 +22,6 @@ const exitStyle = {
         fillRule="evenodd" ></path>
         </svg>
   </div>
-
-
   )
  }
 const Right = () =>{
@@ -50,61 +48,48 @@ const Left = () => {
     </div>
   );
 };
-class Gallery extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state ={
-    currentIndex: 0,
-    }
-
-  }
-  componentDidMount() {
-  let index = this.props.currentIndex;
-    this.setState({
-    currentIndex: index,
-  })
-  }
+const Gallery = (props) => {
 
 
-  render() {
+
     return (
       <div className='superdiv'>
         <div className="imageContainer">
               <div className='leftParent'>
-              <div onClick={() => this.props.changeIndex(-1)} className='left'>
+              <div onClick={props.prevIndex} className='left'>
                 <Left classname='lefty'/>
               </div>
               </div>
               <img className="view"
-                src= {this.props.currentView} />
+                src= {props.images[props.currentIndex].imgUrl} />
              <div className='rightParent'>
-               <div className='exitdiv' onClick={this.props.exitGallery} >
+               <div className='exitdiv' onClick={props.exitGallery} >
                  <Exit  />
                </div>
-               <div onClick={() => this.props.changeIndex(1)} className='right'>
+               <div onClick={props.nextIndex} className='right'>
                  <Right/>
                </div>
              </div>
         </div>
           <div>
-            <Carousel
-              offset ={this.props.offset}
-              changeView={this.props.changeView}
-              currentView={this.props.currentView}
-              images={this.props.images}
-              currentIndex={this.props.currentIndex}
-              />
+          <Carousel
+            offset={props.offset}
+            changeView={props.changeView}
+            currentView={props.currentView}
+            images={props.images}
+            currentIndex={props.currentIndex}
+            setIndex={props.setIndex}
+          />
           </div>
           <div className='info'>
             <p
-            className='count'>{`${this.props.currentIndex + 1 }/${this.props.images.length}`}
+            className='count'>{`${props.currentIndex + 1 }/${props.images.length}`}
             </p>
           </div>
           <div
-            className='description'>{this.props.images[this.props.currentIndex].imgDescription}
+            className='description'>{props.images[props.currentIndex].imgDescription}
           </div>
       </div>
     );
-  }
 }
 export default Gallery;
