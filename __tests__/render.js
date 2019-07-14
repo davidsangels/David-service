@@ -7,26 +7,41 @@ import Enzyme from 'enzyme'
 Enzyme.configure({disableLifecycleMethods: true});
 
 describe ('App Test', () => {
+    beforeEach(() => {
+        const props =  {
+          view: true,
+          currentView: '',
+          data: [],
+        //   frontImages: [],
+        //   mainImg: [{imgUrl: 'jjnujnub'}],
+          page: 1,
+          view: false,
+          currentIndex: 0,
+          offset: 1,
+        }
+      })
+
     it('maincontainer', () => {
-        const component = mount(<App/>);
+    const component = mount(<App {...props}/>);
         const button = component.find('.container');
         button.simulate('click');
     });
     it('click secondary container changes view to true', () => {
-        const component = mount(<App/>);
+        const mockcallback = jest.fn()
+        const component = mount(<App />);
         const button = component.find('.mainImg');
         button.simulate('click');
-        expect(component.state('view')).toBe(true);
+
     });
     it('Clicking image 1 changes view to true',() => {
-        const component = mount(<App/>);
-        const button = component.find('.secondary');
-        button.children().find('.img').simulate('click');
+        const component = mount(<App {...props}/>);
+        const button = component.find('.secondary1');
+        button.children().find('.img1').simulate('click');
         expect(component.state('view')).toBe(true);
     })
     it('Clicking image 2 changes view to true',() => {
         const component = mount(<App/>);
-        const button = component.find('.secondary');
+        const button = component.find('.secondary2');
         button.children().find('.img2').simulate('click');
         expect(component.state('view')).toBe(true);
     })

@@ -9,7 +9,7 @@ const calculateOffset = (index,finalIndex) => {
   const atFarRight = index > finalIndex - 7;
   const atFarLeft = index < 6;
   if (atFarRight) {
-    extraOffset = 7* (48 + 3);
+    extraOffset = 7 * (48 + 3);
     offset = (finalIndex - 2) * (48 + 3) - extraOffset;
   } else if (atFarLeft) {
     offset = 0;

@@ -15,16 +15,16 @@ const arrowStyle = {
   display:'block',
   overflow:'visible',
 }
-const Heart = () => {
-  return(
-    <div>
-      <svg style={heartStyle}>
-        <path d="m17.5 2.9c-2.1 0-4.1 1.3-5.4 2.8-1.6-1.6-3.8-3.2-6.2-2.7-1.5.2-2.9 1.2-3.6 2.6-2.3 4.1 1 8.3 3.9 11.1 1.4 1.3 2.8 2.5 4.3 3.6.4.3 1.1.9 1.6.9s1.2-.6 1.6-.9c3.2-2.3 6.6-5.1 8.2-8.8 1.5-3.4 0-8.6-4.4-8.6" strokeLinejoin="round">
-        </path>
-      </svg>
-    </div>
-  )
-}
+// const Heart = () => {
+//   return(
+//     <div>
+//       <svg style={heartStyle}>
+//         <path d="m17.5 2.9c-2.1 0-4.1 1.3-5.4 2.8-1.6-1.6-3.8-3.2-6.2-2.7-1.5.2-2.9 1.2-3.6 2.6-2.3 4.1 1 8.3 3.9 11.1 1.4 1.3 2.8 2.5 4.3 3.6.4.3 1.1.9 1.6.9s1.2-.6 1.6-.9c3.2-2.3 6.6-5.1 8.2-8.8 1.5-3.4 0-8.6-4.4-8.6" strokeLinejoin="round">
+//         </path>
+//       </svg>
+//     </div>
+//   )
+// }
 
 const Arrow = () => {
   return(
@@ -42,7 +42,7 @@ class App extends React.Component {
       currentView: '',
       data: [],
       frontImages: [{imgUrl: '1'},'2'],
-      mainImg: [{imgUrl: 0}],
+      mainImg: [{imgUrl: 'jjnujnub'}],
       page: 1,
       view: false,
       currentIndex: 0,
@@ -135,8 +135,8 @@ class App extends React.Component {
                   <img onClick={() => this.changeView(this.state.frontImages[1].imgUrl)}
                   className='img2' src={this.state.frontImages[1].imgUrl} />
                 </div>
-                <Heart/>
-                <Arrow/>
+                {/* <Heart/>
+                <Arrow/> */}
                 <button className='button1'>Save</button>
                 <button className='button2'>Share</button>
                 <button className='button3'>View Photos</button>
