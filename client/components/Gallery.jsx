@@ -50,8 +50,6 @@ const Left = () => {
 };
 const Gallery = (props) => {
 
-
-
     return (
       <div className='superdiv'>
         <div className="imageContainer">

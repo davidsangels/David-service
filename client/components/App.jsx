@@ -46,7 +46,6 @@ class App extends React.Component {
       page: 1,
       view: false,
       currentIndex: 0,
-      offset: 1,
     }
     this.changeView = this.changeView.bind(this);
     this.nextIndex = this.nextIndex.bind(this);
