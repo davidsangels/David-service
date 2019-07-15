@@ -1,5 +1,5 @@
-
-import React from 'react'
+import Style from "../../css/carousel.css";
+import React from 'react';
 
 const calculateOffset = (index,finalIndex) => {
   console.log(index);
@@ -31,12 +31,12 @@ class Carousel extends React.Component {
 
     const offset = calculateOffset(this.props.currentIndex,this.props.images.length - 1);
   return(
-    <div className='carousel'>
-      <div className='carousel-container' >
-        <div className='image-wrapper' style={{transform: `translateX(-${offset}px)`}}  >
+    <div className={Style.carousel}>
+      <div className={Style.carousel-container} >
+        <div className={Style.image-wrapper}style={{transform: `translateX(-${offset}px)`}}  >
           {this.props.images.map( (img, index) => (
           <div >
-            <img className='image' onClick={ ()=> this.props.setIndex(index)}
+            <img className={Style.image} onClick={ ()=> this.props.setIndex(index)}
             src={img.imgUrl}
             key={index} style={this.props.currentIndex === index ? {border: '3px solid black'}: null} />
           </div>
