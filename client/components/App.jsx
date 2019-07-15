@@ -47,10 +47,11 @@ class App extends React.Component {
   }
   componentDidMount() {
   $.ajax({
-    method: 'POST',
+    method: 'GET',
     url: '/data',
     data: {id: this.state.page},
     success: (success) => {
+
       const frontSlice = success.slice(1,3)
       this.setState({
       data: success,
