@@ -20,7 +20,7 @@
     "server": "live-server ./public -w",
     "start": "nodemon server/index.js",
     "seed": "node ./database/connection.js",
-    "test": "jest  --coverage --watch "
+    "test": "jest  --coverage --watch  --verbose false"
   },
   "dependencies": {
     "aws-sdk": "^2.488.0",

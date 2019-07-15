@@ -53,13 +53,13 @@ const Gallery = (props) => {
     return (
       <div className='superdiv'>
         <div className="imageContainer">
-              <div className='leftParent'>
-              <div onClick={props.prevIndex} className='left'>
-                <Left classname='lefty'/>
-              </div>
-              </div>
-              <img className="view"
-                src= {props.images[props.currentIndex].imgUrl} />
+          <div className='leftParent'>
+            <div onClick={props.prevIndex} className='left'>
+              <Left classname='lefty'/>
+            </div>
+          </div>
+          <img className="view"
+          src= {props.images[props.currentInde].imgUrl} />
              <div className='rightParent'>
                <div className='exitdiv' onClick={props.exitGallery} >
                  <Exit  />
@@ -69,7 +69,7 @@ const Gallery = (props) => {
                </div>
              </div>
         </div>
-          <div>
+        <div>
           <Carousel
             offset={props.offset}
             changeView={props.changeView}
@@ -78,15 +78,15 @@ const Gallery = (props) => {
             currentIndex={props.currentIndex}
             setIndex={props.setIndex}
           />
-          </div>
-          <div className='info'>
-            <p
-            className='count'>{`${props.currentIndex + 1 }/${props.images.length}`}
-            </p>
-          </div>
-          <div
-            className='description'>{props.images[props.currentIndex].imgDescription}
-          </div>
+        </div>
+        <div className='info'>
+          <p className='count'>
+          {`${props.currentIndex + 1 }/${props.images.length}`}
+          </p>
+        </div>
+        <div
+          className='description'>{props.images[props.currentIndex].imgDescription}
+        </div>
       </div>
     );
 }
