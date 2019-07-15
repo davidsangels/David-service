@@ -1,8 +1,6 @@
 const path = require('path');
-
 const entryPoint = path.join(__dirname, '/client');
 const output = path.join(__dirname, '/public');
-
 // add source dir and output dir variables
 module.exports = {
   entry: `${entryPoint}/index.jsx`,
@@ -20,6 +18,20 @@ module.exports = {
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+        ],
       },
     ],
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from './Carousel.jsx'
-
+import Style from '../../css/gallery.css'
 
 const pstyle = {
   height: "24px",
@@ -51,25 +51,25 @@ const Left = () => {
 const Gallery = (props) => {
 
     return (
-      <div className='superdiv'>
-        <div className="imageContainer">
-              <div className='leftParent'>
-              <div onClick={props.prevIndex} className='left'>
-                <Left classname='lefty'/>
-              </div>
-              </div>
-              <img className="view"
-                src= {props.images[props.currentIndex].imgUrl} />
-             <div className='rightParent'>
-               <div className='exitdiv' onClick={props.exitGallery} >
+      <div className={Style.superdiv}>
+        <div className={Style.imageContainer}>
+          <div className={Style.leftParent}>
+            <div onClick={props.prevIndex} className={Style.left}>
+              <Left classname={Style.lefty}/>
+            </div>
+          </div>
+          <img className={Style.view}
+          src= {props.images[props.currentIndex].imgUrl} />
+             <div className={Style.rightParent}>
+               <div className={Style.exitdiv} onClick={props.exitGallery} >
                  <Exit  />
                </div>
-               <div onClick={props.nextIndex} className='right'>
+               <div onClick={props.nextIndex} className={Style.right}>
                  <Right/>
                </div>
              </div>
         </div>
-          <div>
+        <div>
           <Carousel
             offset={props.offset}
             changeView={props.changeView}
@@ -78,15 +78,15 @@ const Gallery = (props) => {
             currentIndex={props.currentIndex}
             setIndex={props.setIndex}
           />
-          </div>
-          <div className='info'>
-            <p
-            className='count'>{`${props.currentIndex + 1 }/${props.images.length}`}
-            </p>
-          </div>
-          <div
-            className='description'>{props.images[props.currentIndex].imgDescription}
-          </div>
+        </div>
+        <div className={Style.info}>
+          <p className={Style.count}>
+          {`${props.currentIndex + 1 }/${props.images.length}`}
+          </p>
+        </div>
+        <div
+          className={Style.description}>{props.images[props.currentIndex].imgDescription}
+        </div>
       </div>
     );
 }
