@@ -59,7 +59,7 @@ const Gallery = (props) => {
             </div>
           </div>
           <img className={Style.view}
-          src= {props.images[props.currentInde].imgUrl} />
+          src= {props.images[props.currentIndex].imgUrl} />
              <div className={Style.rightParent}>
                <div className={Style.exitdiv} onClick={props.exitGallery} >
                  <Exit  />

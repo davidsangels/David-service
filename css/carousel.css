@@ -8,14 +8,14 @@
   justify-content: center;
   width: 100%;
 }
-.carousel-container{
+.carouselContainer{
   margin-top: 48px;
   height: 64px;
   width: 596px;
   overflow: hidden;
 
 }
-.image-wrapper{
+.imageWrapper{
   display: flex;
   flex-direction: row;
   transition: all 0.3s ease-in-out;
