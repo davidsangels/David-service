@@ -2,6 +2,7 @@
 import React from 'react';
 import $ from  'jquery';
 import Gallery from './Gallery.jsx';
+import styles from '../../css/app.css';
 
 const heartStyle = {
   height: '15px',
@@ -15,16 +16,7 @@ const arrowStyle = {
   display:'block',
   overflow:'visible',
 }
-// const Heart = () => {
-//   return(
-//     <div>
-//       <svg style={heartStyle}>
-//         <path d="m17.5 2.9c-2.1 0-4.1 1.3-5.4 2.8-1.6-1.6-3.8-3.2-6.2-2.7-1.5.2-2.9 1.2-3.6 2.6-2.3 4.1 1 8.3 3.9 11.1 1.4 1.3 2.8 2.5 4.3 3.6.4.3 1.1.9 1.6.9s1.2-.6 1.6-.9c3.2-2.3 6.6-5.1 8.2-8.8 1.5-3.4 0-8.6-4.4-8.6" strokeLinejoin="round">
-//         </path>
-//       </svg>
-//     </div>
-//   )
-// }
+
 
 const Arrow = () => {
   return(
@@ -46,7 +38,6 @@ class App extends React.Component {
       page: 1,
       view: false,
       currentIndex: 0,
-      offset: 1,
     }
     this.changeView = this.changeView.bind(this);
     this.nextIndex = this.nextIndex.bind(this);
@@ -120,26 +111,26 @@ class App extends React.Component {
     let views = () => {
       if (this.state.view === false) {
         return (
-          <div className='container'>
-              <div className='mainContainer'>
-                <img onClick={() => this.changeView(this.state.mainImg[0].imgUrl)} className='mainImg'
+          <div className={styles.container}>
+              <div className={styles.mainContainer}>
+                <img onClick={() => this.changeView(this.state.mainImg[0].imgUrl)} className={styles.mainImg}
                 src={this.state.mainImg[0].imgUrl}/>
               </div>
-           <div className='secondaryImages'>
-                <div className='secondary1'>
+           <div className={styles.secondaryImages}>
+                <div className={styles.secondary1}>
                   <img
                   onClick={() => this.changeView(this.state.frontImages[0].imgUrl)}
-                  className='img1' src={this.state.frontImages[0].imgUrl} />
+                  className={styles.img1} src={this.state.frontImages[0].imgUrl} />
                 </div>
-                <div className='secondary2'>
+                <div className={styles.secondary2}>
                   <img onClick={() => this.changeView(this.state.frontImages[1].imgUrl)}
-                  className='img2' src={this.state.frontImages[1].imgUrl} />
+                  className={styles.img2} src={this.state.frontImages[1].imgUrl} />
                 </div>
                 {/* <Heart/>
                 <Arrow/> */}
-                <button className='button1'>Save</button>
-                <button className='button2'>Share</button>
-                <button className='button3'>View Photos</button>
+                <button className={styles.button1}>Save</button>
+                <button className={styles.button2}>Share</button>
+                <button className={styles.button3}>View Photos</button>
            </div>
          </div>
         )
@@ -161,7 +152,7 @@ class App extends React.Component {
       }
     }
     return (
-    <div className='super'>
+    <div >
       {views()}
     </div>
     )

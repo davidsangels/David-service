@@ -12,8 +12,8 @@ describe ('App Test', () => {
           view: true,
           currentView: '',
           data: [],
-        //   frontImages: [],
-        //   mainImg: [{imgUrl: 'jjnujnub'}],
+          frontImages: [],
+          mainImg: [{imgUrl: 'jjnujnub'}],
           page: 1,
           view: false,
           currentIndex: 0,
@@ -21,26 +21,27 @@ describe ('App Test', () => {
         }
       })
 
-    it('maincontainer', () => {
-    const component = mount(<App {...props}/>);
+    it('maincontainer div is clickable', () => {
+        const component = shallow(<App />);
         const button = component.find('.container');
         button.simulate('click');
     });
     it('click secondary container changes view to true', () => {
-        const mockcallback = jest.fn()
-        const component = mount(<App />);
+        // const mockcallback = jest.fn()
+        const component = shallow(<App />);
         const button = component.find('.mainImg');
         button.simulate('click');
+        expect(component.state('view')).toEqual(true)
 
     });
     it('Clicking image 1 changes view to true',() => {
-        const component = mount(<App {...props}/>);
+        const component = shallow(<App />);
         const button = component.find('.secondary1');
         button.children().find('.img1').simulate('click');
         expect(component.state('view')).toBe(true);
     })
     it('Clicking image 2 changes view to true',() => {
-        const component = mount(<App/>);
+        const component = shallow(<App/>);
         const button = component.find('.secondary2');
         button.children().find('.img2').simulate('click');
         expect(component.state('view')).toBe(true);
@@ -48,10 +49,26 @@ describe ('App Test', () => {
 });
 
 describe('Testing Gallery component', () => {
-    it('test gallery left  button ', () => {
+    beforeEach(() => {
+        const props =  {
+          view: true,
+          currentView: '',
+          data: [],
+          frontImages: [],
+          mainImg: [{imgUrl: 'jjnujnub'}],
+          page: 1,
+          view: false,
+          currentIndex: 0,
+          offset: 1,
+        }
+      })
 
-        const gallery = shallow(<Gallery/>);
-        expect(gallery.exist('.left')).toEqual(true);
+    it('test gallery left  button ', () => {
+        const gallery = shallow(<Gallery />);
+        gallery.setState({...props})
+        const leftButton = component.find('superdiv');
+        button.children().find('.left').simulate('click');
+
     });
     it('test gallery', () => {
         const component= shallow(<Gallery />);
@@ -61,10 +78,25 @@ describe('Testing Gallery component', () => {
 
 
 describe('Testing Carousel  component', () => {
+    beforeEach(() => {
+        const props =  {
+          view: true,
+          currentView: '',
+          data: [],
+          frontImages: [],
+          mainImg: [{imgUrl: 'jjnujnub'}],
+          page: 1,
+          view: false,
+          currentIndex: 0,
+          offset: 1,
+        }
+      })
     it('test gallery', () => {
 
-        const component= shallow(<Carousel />);
-        expect(component.find('.left')).toHaveLength(1)
+        const component= shallow(<Gallery />);
+        const instance = component.instance()
+        const string = instance.find('.superdiv')
+
     });
 });
 
