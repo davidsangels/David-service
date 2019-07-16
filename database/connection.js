@@ -73,6 +73,9 @@ const createImgData = () => {
     }
   }
 };
+
+createImgData();
+
 exports.createImgData = createImgData;
 exports.createId = createId;
 exports.connection = connection;
