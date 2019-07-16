@@ -5,7 +5,7 @@ const server = express();
 const bodyParser = require('body-parser');
 const seed = require('../database/connection.js');
 
-const port = 3001;
+const port = 3002;
 const router = require('../routes/image-upload.js');
 const request = require('request');
 
