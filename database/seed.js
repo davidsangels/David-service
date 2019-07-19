@@ -1,32 +1,64 @@
 const mysql = require('mysql');
 const faker = require('faker');
+// THIS SHOULD ACCESS THE
+// connect to mysql database  port
+// rune the querey function to create databse then creat a table  
+// then call the function that 
 
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: '172.17.0.2',
   user: 'root',
-  database: 'listings',
+  password: 'root'
 });
 
 connection.connect();
 
-// create function that adds
-// small img large img med img img url img description after
-const createId = () => {
-  for (let i = 1; i < 101; i + 1) {
-    // do aquery
-    const string = String(i);
-    const query = `insert into images (id,img) values (/page/${string})`;
+// steps to connect to connect to mysql container:
+// connect to root of mysql
+// drop database if exist 
+// create database 
+// create table
+// seed table 
 
-    connection.query(query, (err, result) => {
-      if (err) {
-        throw err;
-      }
-      console.log(result);
-    });
-  }
-};
+const dropDatabase = 'DROP DATABASE IF EXISTS test'
+const createDatabase= 'CREATE DATABASE test'
+const useDatabase = 'use test'
+const createTable = 'CREATE table images ( id int not null , imgUrl varchar(255) not null , imgDescription varchar(255) not null )'
+
+const create = () => {
+  
+  console.log('drop')
+  connection.query(dropDatabase, (err,result)=> {
+    if (err) console.log(err);
+    else {
+       
+    }
+  });
+  console.log('create')
+  connection.query(createDatabase , (err,result)=> {
+    if (err) console.log(err);
+    else {
+       
+    }
+  });
+  console.log('use')
+  connection.query(useDatabase, (err,result)=> {
+    if (err) console.log(err);
+    else {
+        
+    }
+  });
+  console.log('create')
+  connection.query(createTable, (err,result)=> {
+    if (err) console.log(err);
+    else {
+    }
+  });
+}
+create()
 
 const createImgData = () => {
+  console.log('seed')
   const imgData = [['https://hrimages.s3.us-east-2.amazonaws.com/photo-1439158741799-12ded9a3ba30.jpeg'],
     ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1460533893735-45cea2212645.jpeg'],
     ['https://hrimages.s3.us-east-2.amazonaws.com/photo-1484301548518-d0e0a5db0fc8.jpeg'],
@@ -66,13 +98,16 @@ const createImgData = () => {
       const values = [i, imgData[j][0], faker.lorem.sentence()];
       connection.query(query, values, (err, result) => {
         if (err) {
-          throw err;
+          console.log(err);
         }
-        console.log(result);
+        
       });
     }
   }
 };
-exports.createImgData = createImgData;
-exports.createId = createId;
-exports.connection = connection;
+createImgData();
+connection.changeUser({database : 'test'}, function(err) {
+  if (err) console.log(err);
+});
+
+module.exports = connection
