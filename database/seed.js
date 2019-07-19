@@ -31,28 +31,27 @@ const create = () => {
   connection.query(dropDatabase, (err,result)=> {
     if (err) console.log(err);
     else {
-      console.log('create')
-      connection.query(createDatabase , (err,result)=> {
-        if (err) console.log(err);
-        else {
-          console.log('created database')
-          console.log('use test')
-          connection.changeUser({database : 'test'}, function(err) {
-            if (err){
-              console.log(err);
-            } else{
-                console.log('database use test success')
-                console.log('create table query')
-                connection.query(createTable, (err,result)=> {
-                  if (err) console.log(err);
-                  else {
-                    console.log('table created')
-                  }
-                });
-              } 
-          });
-        }
-      });  
+       
+    }
+  });
+  console.log('create')
+  connection.query(createDatabase , (err,result)=> {
+    if (err) console.log(err);
+    else {
+       
+    }
+  });
+  console.log('use')
+  connection.query(useDatabase, (err,result)=> {
+    if (err) console.log(err);
+    else {
+        
+    }
+  });
+  console.log('create')
+  connection.query(createTable, (err,result)=> {
+    if (err) console.log(err);
+    else {
     }
   });
 }
@@ -107,6 +106,10 @@ const createImgData = () => {
   }
 };
 createImgData();
-
+connection.changeUser({database : 'test'}, function(err) {
+  if (err){
+    console.log(err);
+  } else console.log('data')
+});
 
 module.exports = connection
