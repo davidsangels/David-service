@@ -5,10 +5,12 @@ const faker = require('faker');
 // rune the querey function to create databse then creat a table  
 // then call the function that 
 
+/// return back to old settins
 const connection = mysql.createConnection({
   host: '172.17.0.2',
   user: 'root',
   password: 'root'
+  
 });
 
 connection.connect();
