@@ -1,15 +1,10 @@
 const mysql = require('mysql');
 const faker = require('faker');
-// THIS SHOULD ACCESS THE
-// connect to mysql database  port
-// rune the querey function to create databse then creat a table  
-// then call the function that 
 
-/// return back to old settins
 const connection = mysql.createConnection({
-  host: '172.17.0.2',
+  host: 'localhost',
   user: 'root',
-  password: 'root'
+
   
 });
 
