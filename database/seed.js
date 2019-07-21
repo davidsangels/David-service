@@ -107,7 +107,7 @@ const createImgData = () => {
     }
   }
 };
-<<<<<<< HEAD:database/seed.js
+
 createImgData();
 connection.changeUser({database : 'test'}, function(err) {
   if (err){
