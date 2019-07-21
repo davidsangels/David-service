@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 const faker = require('faker');
-
+// connect to root of mysql without choosing a database
+// currently set for local host remember to reset to contain ip if needed 
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -103,7 +104,10 @@ const createImgData = () => {
   }
 };
 
+
+// this seed database with hardcoded data
 createImgData();
+//this switches to newly created and seeded database
 connection.changeUser({database : 'test'}, function(err) {
   if (err){
     console.log(err);
