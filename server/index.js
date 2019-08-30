@@ -4,10 +4,10 @@ const path = require('path')
 const server = express();
 const bodyParser = require('body-parser');
 const port = 3002;
-const db= require('../database/seed.js');
+const db = require('../database/seed.js');
 const compression = require('compression');
+const expressStaticGzip = require('express-static-gzip');
 
-var expressStaticGzip = require('express-static-gzip');
 server.use(bodyParser());
 server.use(compression());
 server.use('/:id', expressStaticGzip('public', {

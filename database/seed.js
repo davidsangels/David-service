@@ -3,10 +3,9 @@ const faker = require('faker');
 // connect to root of mysql without choosing a database
 // currently set for local host remember to reset to contain ip if needed 
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: '172.17.0.2',
   user: 'root',
-
-  
+  password: 'root'  
 });
 
 connection.connect();

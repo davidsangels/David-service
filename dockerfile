@@ -6,7 +6,7 @@ WORKDIR /src/app
 
 COPY . /src/app
 
-RUN npm install --dev
+RUN npm install --only=dev
 
 EXPOSE 3002
 
